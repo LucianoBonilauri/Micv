@@ -1,111 +1,123 @@
-:root {
-  --text: #6b6375;
-  --text-h: #08060d;
-  --bg: #fff;
-  --border: #e5e4e7;
-  --code-bg: #f4f3ec;
-  --accent: #aa3bff;
-  --accent-bg: rgba(170, 59, 255, 0.1);
-  --accent-border: rgba(170, 59, 255, 0.5);
-  --social-bg: rgba(244, 243, 236, 0.5);
-  --shadow:
-    rgba(0, 0, 0, 0.1) 0 10px 15px -3px, rgba(0, 0, 0, 0.05) 0 4px 6px -2px;
+/* =========================================================
+   index.css: estilos generales de toda la página
+   1) Colores de cada tema (claro / oscuro)
+   2) Estilos base
+   3) Clases que se usan en varios componentes
+   ========================================================= */
 
-  --sans: system-ui, 'Segoe UI', Roboto, sans-serif;
-  --heading: system-ui, 'Segoe UI', Roboto, sans-serif;
-  --mono: ui-monospace, Consolas, monospace;
+/* ---------- 1) COLORES ----------
+   El body tiene la clase "claro" u "oscuro" (la pone TemaContext.tsx).
+   Según esa clase cambian estas variables, y con ellas los colores de toda la página. */
 
-  font: 18px/145% var(--sans);
-  letter-spacing: 0.18px;
-  color-scheme: light dark;
-  color: var(--text);
-  background: var(--bg);
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-
-  @media (max-width: 1024px) {
-    font-size: 16px;
-  }
+body.claro {
+  --fondo: #ece9e3;
+  --superficie: #ffffff;
+  --superficie-2: #f7f8fb;
+  --borde: #e3e7ee;
+  --texto: #101828;
+  --texto-suave: #535e70;
+  --acento: #2f5bea;
+  --acento-texto: #2a50d2;
+  --acento-suave: #eaf0fe;
+  --sobre-acento: #ffffff;
+  --fondo-foto: #e6edfd;
+  --fondo-logo: #f7f8fb;
+  --riel: #f1f3f7;
+  --boton-activo: #ffffff;
+  --sombra-boton: 0 1px 2px rgba(16, 24, 40, 0.12), 0 1px 1px rgba(16, 24, 40, 0.04);
+  --sombra: 0 1px 2px rgba(16, 24, 40, 0.04), 0 18px 40px -28px rgba(16, 24, 40, 0.25);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --text: #9ca3af;
-    --text-h: #f3f4f6;
-    --bg: #16171d;
-    --border: #2e303a;
-    --code-bg: #1f2028;
-    --accent: #c084fc;
-    --accent-bg: rgba(192, 132, 252, 0.15);
-    --accent-border: rgba(192, 132, 252, 0.5);
-    --social-bg: rgba(47, 48, 58, 0.5);
-    --shadow:
-      rgba(0, 0, 0, 0.4) 0 10px 15px -3px, rgba(0, 0, 0, 0.25) 0 4px 6px -2px;
-  }
-
-  #social .button-icon {
-    filter: invert(1) brightness(2);
-  }
+body.oscuro {
+  --fondo: #0a0f18;
+  --superficie: #111826;
+  --superficie-2: #162033;
+  --borde: #232e44;
+  --texto: #edf1f8;
+  --texto-suave: #9da9be;
+  --acento: #7d9bff;
+  --acento-texto: #93acff;
+  --acento-suave: #1b2747;
+  --sobre-acento: #0a0f18;
+  --fondo-foto: #172241;
+  --fondo-logo: #dce2eb;
+  --riel: #0a0f18;
+  --boton-activo: #27334f;
+  --sombra-boton: none;
+  --sombra: none;
 }
 
-#root {
-  width: 1126px;
-  max-width: 100%;
-  margin: 0 auto;
-  text-align: center;
-  border-inline: 1px solid var(--border);
-  min-height: 100svh;
-  display: flex;
-  flex-direction: column;
+/* ---------- 2) BASE ---------- */
+
+* {
   box-sizing: border-box;
 }
 
 body {
   margin: 0;
+  font-family: 'Plus Jakarta Sans', system-ui, 'Segoe UI', Roboto, Arial, sans-serif;
+  background: var(--fondo);
+  color: var(--texto);
 }
 
+/* Sacamos los márgenes que el navegador pone por defecto */
 h1,
-h2 {
-  font-family: var(--heading);
-  font-weight: 500;
-  color: var(--text-h);
-}
-
-h1 {
-  font-size: 56px;
-  letter-spacing: -1.68px;
-  margin: 32px 0;
-  @media (max-width: 1024px) {
-    font-size: 36px;
-    margin: 20px 0;
-  }
-}
-h2 {
-  font-size: 24px;
-  line-height: 118%;
-  letter-spacing: -0.24px;
-  margin: 0 0 8px;
-  @media (max-width: 1024px) {
-    font-size: 20px;
-  }
-}
-p {
+h2,
+h3,
+p,
+ul,
+dl,
+dd,
+figure {
   margin: 0;
 }
 
-code,
-.counter {
-  font-family: var(--mono);
-  display: inline-flex;
-  border-radius: 4px;
-  color: var(--text-h);
+/* ---------- 3) CLASES COMPARTIDAS ---------- */
+
+/* Ancho máximo centrado (navbar, currículum y proyectos) */
+.contenedor {
+  width: 100%;
+  max-width: 1160px;
+  margin: 0 auto;
 }
 
-code {
-  font-size: 15px;
-  line-height: 135%;
-  padding: 4px 8px;
-  background: var(--code-bg);
+/* Etiqueta + título de una sección */
+.encabezado {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+/* Texto chico en mayúsculas con una rayita adelante ("CURRÍCULUM VITAE", "PROYECTOS") */
+.etiqueta {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--acento-texto);
+}
+
+.etiqueta::before {
+  content: "";
+  width: 28px;
+  height: 2px;
+  flex: none;
+  border-radius: 2px;
+  background: var(--acento);
+}
+
+/* Pastilla redonda con el año (cursos y proyectos) */
+.pastilla {
+  flex: none;
+  padding: 6px 10px;
+  border-radius: 999px;
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 1;
+  white-space: nowrap;
+  background: var(--acento-suave);
+  color: var(--acento-texto);
 }

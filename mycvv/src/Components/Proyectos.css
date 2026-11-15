@@ -1,0 +1,22 @@
+/* ===== Proyectos: sección con todas las cards ===== */
+
+.proyectos {
+  display: flex;
+  flex-direction: column;
+  gap: 36px;
+}
+
+.proyectos-titulo {
+  font-size: clamp(26px, 2.8vw, 34px);
+  font-weight: 700;
+  line-height: 1.15;
+  letter-spacing: -0.025em;
+  text-wrap: balance;
+}
+
+/* Grilla de cards: entran tantas columnas de 300px como quepan */
+.proyectos-grilla {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(300px, 100%), 1fr));
+  gap: 24px;
+}

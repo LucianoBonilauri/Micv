@@ -1,0 +1,91 @@
+/* ===== Navbar: barra de arriba ===== */
+
+.navbar {
+  padding: 0 clamp(16px, 5vw, 64px);
+  background: var(--superficie);
+  border-bottom: 1px solid var(--borde);
+}
+
+.navbar-contenido {
+  min-height: 80px;
+  padding: 12px 0;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+/* --- Logo --- */
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo-hoja {
+  fill: var(--acento);
+}
+
+.logo-doblez {
+  fill: #ffffff;
+  fill-opacity: 0.45;
+}
+
+.logo-dibujo {
+  fill: var(--sobre-acento);
+}
+
+.logo-texto {
+  font-size: 22px;
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: -0.03em;
+}
+
+.logo-acento {
+  color: var(--acento);
+}
+
+/* --- Botones del tema --- */
+.selector-tema {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px;
+  border-radius: 999px;
+  background: var(--riel);
+  border: 1px solid var(--borde);
+}
+
+.boton-tema {
+  height: 44px;
+  padding: 0 18px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  border: 0;
+  border-radius: 999px;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 600;
+  background: transparent;
+  color: var(--texto-suave);
+}
+
+/* Los íconos de los botones toman el color del texto */
+.boton-tema svg {
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+/* El botón del tema elegido (lo agrega el renderizado condicional de Navbar.tsx) */
+.boton-tema.activo {
+  background: var(--boton-activo);
+  color: var(--texto);
+  box-shadow: var(--sombra-boton);
+}
