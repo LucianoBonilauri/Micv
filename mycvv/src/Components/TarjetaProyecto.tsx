@@ -5,7 +5,7 @@ import './TarjetaProyecto.css'
 export type Proyecto = {
   id: number
   titulo: string
-  anio: string
+  año: string
   tipo: string
   rol: string
   descripcion: string
@@ -25,7 +25,7 @@ function TarjetaProyecto({ proyecto }: { proyecto: Proyecto }) {
         {/* Título y año */}
         <div className="tarjeta-cabecera">
           <h3 className="tarjeta-titulo">{proyecto.titulo}</h3>
-          <span className="pastilla">{proyecto.anio}</span>
+          <span className="pastilla">{proyecto.año}</span>
         </div>
 
         {/* Lista de datos: <dt> es el nombre del dato y <dd> su valor */}

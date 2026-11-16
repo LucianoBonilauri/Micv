@@ -18,8 +18,7 @@ function Proyectos() {
   return (
     <section className="proyectos contenedor">
       <div className="encabezado">
-        <p className="etiqueta">Proyectos</p>
-        <h2 className="proyectos-titulo">Realizados durante el secundario</h2>
+        <p className="etiqueta">Proyectos realizados durante el secundario</p>
       </div>
 
       <div className="proyectos-grilla">

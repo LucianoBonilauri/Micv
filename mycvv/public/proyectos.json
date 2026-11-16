@@ -2,7 +2,7 @@
   {
     "id": 1,
     "titulo": "Recipeat",
-    "anio": "3er año",
+    "año":"3er año",
     "tipo": "Página web",
     "rol": "Programador front-end",
     "descripcion": "Recipeat es una página que contiene una gran variedad de recetas, pudiendo filtrar estas en base a distintos criterios para facilitar la vida a la hora de cocinar.",
@@ -11,7 +11,7 @@
   {
     "id": 2,
     "titulo": "WARDEX",
-    "anio": "4to año",
+    "año":"4to año",
     "tipo": "Agente IA",
     "rol": "Programador front-end",
     "descripcion": "WARDEX es un agente de ciberseguridad encargado de escanear servidores, para así encontrar vulnerabilidades dentro de estos.",
