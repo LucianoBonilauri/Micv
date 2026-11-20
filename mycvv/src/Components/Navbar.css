@@ -1,5 +1,3 @@
-/* ===== Navbar: barra de arriba ===== */
-
 .navbar {
   padding: 0 clamp(16px, 5vw, 64px);
   background: var(--superficie);
@@ -16,7 +14,6 @@
   gap: 16px;
 }
 
-/* --- Logo --- */
 .logo {
   display: flex;
   align-items: center;
@@ -47,7 +44,6 @@
   color: var(--acento);
 }
 
-/* --- Botones del tema --- */
 .selector-tema {
   display: flex;
   align-items: center;
@@ -74,7 +70,6 @@
   color: var(--texto-suave);
 }
 
-/* Los íconos de los botones toman el color del texto */
 .boton-tema svg {
   fill: none;
   stroke: currentColor;
@@ -83,7 +78,6 @@
   stroke-linejoin: round;
 }
 
-/* El botón del tema elegido (lo agrega el renderizado condicional de Navbar.tsx) */
 .boton-tema.activo {
   background: var(--boton-activo);
   color: var(--texto);

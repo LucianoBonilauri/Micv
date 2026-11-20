@@ -1,14 +1,3 @@
-/* =========================================================
-   index.css: estilos generales de toda la página
-   1) Colores de cada tema (claro / oscuro)
-   2) Estilos base
-   3) Clases que se usan en varios componentes
-   ========================================================= */
-
-/* ---------- 1) COLORES ----------
-   El body tiene la clase "claro" u "oscuro" (la pone TemaContext.tsx).
-   Según esa clase cambian estas variables, y con ellas los colores de toda la página. */
-
 body.claro {
   --fondo: #ece9e3;
   --superficie: #ffffff;
@@ -47,8 +36,6 @@ body.oscuro {
   --sombra: none;
 }
 
-/* ---------- 2) BASE ---------- */
-
 * {
   box-sizing: border-box;
 }
@@ -60,7 +47,6 @@ body {
   color: var(--texto);
 }
 
-/* Sacamos los márgenes que el navegador pone por defecto */
 h1,
 h2,
 h3,
@@ -72,23 +58,18 @@ figure {
   margin: 0;
 }
 
-/* ---------- 3) CLASES COMPARTIDAS ---------- */
-
-/* Ancho máximo centrado (navbar, currículum y proyectos) */
 .contenedor {
   width: 100%;
   max-width: 1160px;
   margin: 0 auto;
 }
 
-/* Etiqueta + título de una sección */
 .encabezado {
   display: flex;
   flex-direction: column;
   gap: 14px;
 }
 
-/* Texto chico en mayúsculas con una rayita adelante ("CURRÍCULUM VITAE", "PROYECTOS") */
 .etiqueta {
   display: flex;
   align-items: center;
@@ -109,7 +90,6 @@ figure {
   background: var(--acento);
 }
 
-/* Pastilla redonda con el año (cursos y proyectos) */
 .pastilla {
   flex: none;
   padding: 6px 10px;

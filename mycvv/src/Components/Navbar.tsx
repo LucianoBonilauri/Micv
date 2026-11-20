@@ -3,13 +3,11 @@ import { TemaContext } from '../Context/TemaContext'
 import './Navbar.css'
 
 function Navbar() {
-  // CONTEXT: leemos el tema actual y las funciones para cambiarlo
   const { tema, ponerClaro, ponerOscuro } = useContext(TemaContext)
 
   return (
     <header className="navbar">
       <div className="navbar-contenido contenedor">
-        {/* Logo "Mycv": una hoja dibujada con SVG + el texto */}
         <div className="logo">
           <svg width="34" height="34" viewBox="0 0 32 32" aria-hidden="true">
             <path className="logo-hoja" d="M9 2.5h10.5L27 10v16.5a3 3 0 0 1-3 3H9a3 3 0 0 1-3-3v-21a3 3 0 0 1 3-3Z" />
@@ -23,29 +21,23 @@ function Navbar() {
           </span>
         </div>
 
-        {/* Botones para elegir el tema */}
         <div className="selector-tema">
-          {/* RENDERIZADO CONDICIONAL: si el tema es "oscuro",
-              este botón lleva además la clase "activo" (se ve resaltado) */}
           <button
             type="button"
             className={tema === 'oscuro' ? 'boton-tema activo' : 'boton-tema'}
             onClick={ponerOscuro}
           >
-            {/* Ícono de luna */}
             <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true">
               <path d="M20 14.5A8 8 0 0 1 9.5 4a8.4 8.4 0 1 0 10.5 10.5Z" />
             </svg>
             Oscuro
           </button>
 
-          {/* RENDERIZADO CONDICIONAL: lo mismo, pero para el tema "claro" */}
           <button
             type="button"
             className={tema === 'claro' ? 'boton-tema activo' : 'boton-tema'}
             onClick={ponerClaro}
           >
-            {/* Ícono de sol */}
             <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true">
               <circle cx="12" cy="12" r="4" />
               <path d="M12 2.5v2M12 19.5v2M2.5 12h2M19.5 12h2M5.3 5.3l1.4 1.4M17.3 17.3l1.4 1.4M5.3 18.7l1.4-1.4M17.3 6.7l1.4-1.4" />
